@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Setup Form</h1>
+  <form #setupForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="lan.name">
+    </div>
+    <div class="form-group">
+      <label for="start">Start</label>
+      <input type="datetime-local" class="form-control" id="start" name="start" required [(ngModel)]="lan.start">
+    </div>
+    <div class="form-group">
+      <label for="end">Ende</label>
+      <input type="datetime-local" class="form-control" id="end" name="end" required [(ngModel)]="lan.end">
+    </div><div class="form-group">
+      <label for="city">Stadt</label>
+      <input type="text" class="form-control" id="city" name="city" required [(ngModel)]="lan.city">
+    </div><div class="form-group">
+      <label for="street">Strasse</label>
+      <input type="text" class="form-control" id="street" name="street" required [(ngModel)]="lan.street">
+    </div><div class="form-group">
+      <label for="zip">PLZ</label>
+      <input type="text" class="form-control" id="zip" name="zip" required [(ngModel)]="lan.zip">
+    </div>
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!setupForm.form.valid">Submit</button>
+
+  </form>
+</div>
