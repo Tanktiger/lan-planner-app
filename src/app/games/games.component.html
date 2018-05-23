@@ -1,0 +1,7 @@
+<h3>Games</h3>
+<ul>
+  <li *ngFor="let game of lan.games" (click)="selectedGame = game">
+    {{game.name}} ({{game.shortname}})
+  </li>
+</ul>
+<app-game (save)="onChange($event)" [game]="selectedGame"></app-game>

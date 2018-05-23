@@ -1,7 +1,10 @@
+
 export class Attendee {
+    public id: number;
     constructor(
-        public id: number,
         public name: string,
         public email: string,
-    ) {  }
+    ) {
+        this.id = new Date().getTime();
+    }
 }

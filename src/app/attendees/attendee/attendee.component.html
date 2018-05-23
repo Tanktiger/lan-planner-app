@@ -1,0 +1,9 @@
+<h2>Add/Edit</h2>
+<form #attendeeForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="attendee">
+  <label>Name:</label>
+  <input [(ngModel)]="attendee.name" name="name">
+  <label>Email:</label>
+  <input [(ngModel)]="attendee.email" name="email">
+  <button type="submit">Speichern</button>
+  <button type="button" (click)="reset()">X</button>
+</form>

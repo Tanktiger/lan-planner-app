@@ -1,0 +1,9 @@
+<h2>Add/Edit</h2>
+<form #gameForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="game">
+  <label>Name:</label>
+  <input [(ngModel)]="game.name" name="name">
+  <label>Shortname:</label>
+  <input [(ngModel)]="game.shortname" name="shortname">
+  <button type="submit">Speichern</button>
+  <button type="button" (click)="reset()">X</button>
+</form>

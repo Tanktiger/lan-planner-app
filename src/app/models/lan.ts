@@ -16,7 +16,6 @@ export class Lan {
     public royalBeefs: Array<RoyalBeef>;
 
     constructor(
-        id?: number,
         name?: string,
         reference?: string,
         start?: string,
@@ -28,17 +27,16 @@ export class Lan {
         games?: Array<Game>,
         royalBeefs?: Array<RoyalBeef>,
     ) {
-        this.id = id;
         this.name = name;
         this.start = start;
         this.end = end;
         this.city = city;
         this.street = street;
         this.zip = zip;
-        this.games = games;
-        this.royalBeefs = royalBeefs;
-        this.attendees = attendees;
-        this.id = id ? id : Math.random() + Math.random() + Math.random() + Math.random();
+        this.games = games || [];
+        this.royalBeefs = royalBeefs || [];
+        this.attendees = attendees || [];
+        this.id = new Date().getTime();
         this.reference =  reference ? reference : '' + (this.id + this.id);
     }
 }

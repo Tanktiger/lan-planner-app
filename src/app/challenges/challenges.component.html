@@ -1,0 +1,7 @@
+<h3>Games</h3>
+<ul>
+  <li *ngFor="let challenge of royalBeef.challenges" (click)="selectedChallenge = challenge">
+    {{challenge.title}}
+  </li>
+</ul>
+<app-challenge (save)="onChange($event)" [challenge]="selectedChallenge"></app-challenge>

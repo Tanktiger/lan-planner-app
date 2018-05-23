@@ -1,0 +1,22 @@
+<h2>Add/Edit</h2>
+<form #royalBeefForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="royalBeef">
+  <label>Name:</label>
+  <input [(ngModel)]="royalBeef.name" name="name">
+  <br>
+  <label>Games:</label>
+  <select [(ngModel)]="royalBeef.games" name="games" multiple>
+    <option [value]="game.id" *ngFor="let game of lan.games" >{{game.name}}</option>
+  </select>
+  <br>
+  <label>attendees:</label>
+  <select [(ngModel)]="royalBeef.attendees" name="attendees" multiple>
+    <option [value]="attendee.id" *ngFor="let attendee of lan.attendees" >{{attendee.name}}</option>
+  </select>
+  <br>
+  <label>challenges:</label>
+  <select [(ngModel)]="royalBeef.challenges" name="challenges" multiple>
+    <option [value]="challenge.id" *ngFor="let challenge of royalBeef.challenges" >{{challenge.title}}</option>
+  </select>
+  <button type="submit">Speichern</button>
+  <button type="button" (click)="reset()">X</button>
+</form>

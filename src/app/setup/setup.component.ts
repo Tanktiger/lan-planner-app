@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Lan} from '../lan';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Lan } from '../models/lan';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-setup',
@@ -13,7 +14,8 @@ export class SetupComponent implements OnInit {
 
   constructor(
       private route: ActivatedRoute,
-      private router: Router
+      private router: Router,
+      private storage: LocalStorageService
   ) { }
 
   ngOnInit() {
@@ -23,8 +25,8 @@ export class SetupComponent implements OnInit {
     this.submitted = true;
     // @TODO: save to api
     console.log(this.lan);
-    window.localStorage.setItem('lan', JSON.stringify(this.lan));
-    this.router.navigate([`//dashboard`]);
+    this.storage.set('lan', this.lan);
+    this.router.navigate([`/${this.lan.reference}/dashboard`]);
   }
 
 }

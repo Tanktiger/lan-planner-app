@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Lan} from '../lan';
+import { Lan } from '../models/lan';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,10 +10,12 @@ import {Lan} from '../lan';
 export class DashboardComponent implements OnInit {
 
   lan: Lan;
-  constructor() { }
+  constructor(
+      private storage: LocalStorageService
+  ) { }
 
   ngOnInit() {
-    this.lan = JSON.parse(window.localStorage.getItem('lan'));
+    this.lan = this.storage.get('lan');
   }
 
 }

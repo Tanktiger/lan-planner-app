@@ -1,7 +1,9 @@
 export class Game {
+    public id: number;
     constructor(
-        public id: number,
         public name: string,
         public shortname: string
-    ) {  }
+    ) {
+        this.id = new Date().getTime();
+    }
 }

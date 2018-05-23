@@ -1,7 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 make side nav
 <nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/attendees">Attendees</a>
+  <a [routerLink]="['./dashboard']">Dashboard</a>
+  <a [routerLink]="['./attendees']">Attendees</a>
+  <a [routerLink]="['./games']">Games</a>
+  <a [routerLink]="['./royal-beefs']">RoyalBeefs</a>
 </nav>
 <router-outlet></router-outlet>

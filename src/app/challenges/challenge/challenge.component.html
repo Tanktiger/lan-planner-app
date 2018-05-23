@@ -1,0 +1,9 @@
+<h2>Add/Edit</h2>
+<form #challengeForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="challenge">
+  <label>Name:</label>
+  <input [(ngModel)]="challenge.title" name="title">
+  <label>Description:</label>
+  <input [(ngModel)]="challenge.description" name="description">
+  <button type="submit">Speichern</button>
+  <button type="button" (click)="reset()">X</button>
+</form>

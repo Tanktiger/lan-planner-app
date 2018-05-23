@@ -1,0 +1,7 @@
+<h3>RoyalBeefs</h3>
+<ul>
+  <li *ngFor="let royalBeef of lan.royalBeefs" (click)="selectedRoyalBeef = royalBeef">
+    {{royalBeef.name}}
+  </li>
+</ul>
+<app-royal-beef (save)="onChange($event)" [royalBeef]="selectedRoyalBeef"></app-royal-beef>
