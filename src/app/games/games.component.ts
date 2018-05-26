@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { Game } from '../models/game';
 import { LanService } from '../services/lan.service';
 import { Lan } from '../models/lan';
@@ -6,7 +6,8 @@ import { Lan } from '../models/lan';
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
-  styleUrls: ['./games.component.css']
+  styleUrls: ['./games.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class GamesComponent implements OnInit {
   lan: Lan;

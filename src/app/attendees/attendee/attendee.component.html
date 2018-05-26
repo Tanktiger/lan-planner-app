@@ -1,9 +1,24 @@
-<h2>Add/Edit</h2>
-<form #attendeeForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="attendee">
-  <label>Name:</label>
-  <input [(ngModel)]="attendee.name" name="name">
-  <label>Email:</label>
-  <input [(ngModel)]="attendee.email" name="email">
-  <button type="submit">Speichern</button>
-  <button type="button" (click)="reset()">X</button>
+<form #attendeeForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="attendee" class="m-form m-form--fit m-form--label-align-right">
+  <div class="form-group m-form__group row">
+    <div class="col-4">
+      <label for="attendeeName">
+        Name
+      </label>
+      <input class="form-control m-input" id="attendeeName" [(ngModel)]="attendee.name" name="name">
+    </div>
+    <div class="col-4">
+      <label for="attendeeMail">
+        Email
+      </label>
+      <input class="form-control m-input" id="attendeeMail" [(ngModel)]="attendee.email" name="email">
+    </div>
+    <div class="col-4 m-form__actions">
+      <button class="btn btn-metal" type="submit">
+        Submit
+      </button>
+      <button class="btn btn-secondary" (click)="reset()" type="reset">
+        Cancel
+      </button>
+    </div>
+  </div>
 </form>

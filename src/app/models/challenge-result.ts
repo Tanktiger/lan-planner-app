@@ -7,6 +7,7 @@ export class ChallengeResult {
         public challenge: Challenge,
         public attendee: Attendee,
         public position: number,
-        public result: any
+        public result: any,
+        public round: number,
     ) {  }
 }

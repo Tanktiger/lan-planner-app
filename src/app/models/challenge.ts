@@ -7,8 +7,10 @@ export class Challenge {
         public title: string,
         public description: string,
         public results: Array<ChallengeResult>,
-        public images: Array<ChallengeImage>
+        public images: Array<ChallengeImage>,
+        public rounds?: number
     ) {
         this.id = new Date().getTime();
+        this.rounds = rounds !== undefined ? rounds : 1;
     }
 }

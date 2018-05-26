@@ -1,7 +1,55 @@
-<h3>Games</h3>
-<ul>
-  <li *ngFor="let game of lan.games" (click)="selectedGame = game">
-    {{game.name}} ({{game.shortname}})
-  </li>
-</ul>
-<app-game (save)="onChange($event)" [game]="selectedGame"></app-game>
+<!-- BEGIN: Subheader -->
+<div class="m-subheader" appunwraptag="">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title">
+                Spiele
+            </h3>
+        </div>
+    </div>
+</div>
+<!-- END: Subheader -->
+<div class="m-content">
+    <div class="row">
+        <div class="col-12">
+            <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+                <div class="m-portlet__body">
+                    <app-game (save)="onChange($event)" [game]="selectedGame"></app-game>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+                <div class="m-portlet__body">
+                    <div class="m-widget4">
+                        <div class="m-widget4__item" [class.m--hide]="lan.games && lan.games.length > 0">
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    Keine Einträge vorhanden
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="m-widget4__item"
+                             *ngFor="let game of lan.games"
+                             (click)="selectedGame = game">
+                            <div class="m-widget4__img m-widget4__img--pic">
+                                <img alt="" [src]="game.logo" [title]="game.name" *ngIf="game.logo">
+                            </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    {{game.name}} ({{game.shortname}})
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <a class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary" href="#" ng-reflect-href="#">
+                                    X
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

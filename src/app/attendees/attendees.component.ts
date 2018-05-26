@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { Attendee } from '../models/attendee';
 import { Lan } from '../models/lan';
 import { LanService } from '../services/lan.service';
@@ -6,7 +6,8 @@ import { LanService } from '../services/lan.service';
 @Component({
   selector: 'app-attendees',
   templateUrl: './attendees.component.html',
-  styleUrls: ['./attendees.component.css']
+  styleUrls: ['./attendees.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AttendeesComponent implements OnInit {
 

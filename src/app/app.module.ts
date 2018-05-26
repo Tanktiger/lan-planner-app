@@ -17,6 +17,10 @@ import { GameComponent } from './games/game/game.component';
 import { AttendeeComponent } from './attendees/attendee/attendee.component';
 import { ChallengesComponent } from './challenges/challenges.component';
 import { ChallengeComponent } from './challenges/challenge/challenge.component';
+import {ScriptLoaderService} from './services/script-loader.service';
+import {UnwrapTagDirective} from './directives/unwrap-tag.directive';
+import {HrefPreventDefaultDirective} from './directives/href-prevent-default.directive';
+import {LayoutModule} from "./theme/layouts/layout.module";
 
 
 @NgModule({
@@ -32,14 +36,17 @@ import { ChallengeComponent } from './challenges/challenge/challenge.component';
     GameComponent,
     AttendeeComponent,
     ChallengesComponent,
-    ChallengeComponent
+    ChallengeComponent,
+    UnwrapTagDirective,
+    HrefPreventDefaultDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule
   ],
-  providers: [LocalStorageService, LanService],
+  providers: [LocalStorageService, LanService, ScriptLoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
