@@ -1,4 +1,5 @@
-import {Component, OnInit, ViewEncapsulation, AfterViewInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, AfterViewInit, NgZone} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 declare let mLayout: any;
 
@@ -9,9 +10,16 @@ declare let mLayout: any;
 })
 export class HeaderNavComponent implements OnInit, AfterViewInit {
 
+    params: any;
 
-    constructor() {
-
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private ngZone: NgZone
+    ) {
+        this.route.params.subscribe((params) => {
+            this.params = params;
+        });
     }
 
     ngOnInit() {
@@ -24,4 +32,10 @@ export class HeaderNavComponent implements OnInit, AfterViewInit {
 
     }
 
+    goTo(params) {
+        console.log(params);
+        this.ngZone.run(() => {
+            this.router.navigate(params);
+        });
+    }
 }

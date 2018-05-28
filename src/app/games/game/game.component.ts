@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {Game} from '../../models/game';
 import * as _ from 'lodash';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.css'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class GameComponent implements OnInit {
   @Input() game: Game;

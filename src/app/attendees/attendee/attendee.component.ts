@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {Attendee} from '../../models/attendee';
 
 @Component({
   selector: 'app-attendee',
   templateUrl: './attendee.component.html',
-  styleUrls: ['./attendee.component.css']
+  styleUrls: ['./attendee.component.css'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class AttendeeComponent implements OnInit {
     @Input() attendee: Attendee;

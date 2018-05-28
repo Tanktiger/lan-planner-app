@@ -18,9 +18,8 @@ import { AttendeeComponent } from './attendees/attendee/attendee.component';
 import { ChallengesComponent } from './challenges/challenges.component';
 import { ChallengeComponent } from './challenges/challenge/challenge.component';
 import {ScriptLoaderService} from './services/script-loader.service';
-import {UnwrapTagDirective} from './directives/unwrap-tag.directive';
-import {HrefPreventDefaultDirective} from './directives/href-prevent-default.directive';
-import {LayoutModule} from "./theme/layouts/layout.module";
+import {LayoutModule} from './theme/layouts/layout.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -37,14 +36,13 @@ import {LayoutModule} from "./theme/layouts/layout.module";
     AttendeeComponent,
     ChallengesComponent,
     ChallengeComponent,
-    UnwrapTagDirective,
-    HrefPreventDefaultDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule,
+    BrowserAnimationsModule,
   ],
   providers: [LocalStorageService, LanService, ScriptLoaderService],
   bootstrap: [AppComponent]

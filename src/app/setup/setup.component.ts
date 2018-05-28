@@ -26,7 +26,7 @@ export class SetupComponent implements OnInit {
     // @TODO: save to api
     console.log(this.lan);
     this.storage.set('lan', this.lan);
-    this.router.navigate([`/${this.lan.reference}/dashboard`]);
+    this.router.navigate([`/lan/${this.lan.reference}/dashboard`]);
   }
 
 }

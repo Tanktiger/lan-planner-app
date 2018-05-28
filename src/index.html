@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="utf-8">
   <title>LanPlannerApp</title>
   <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--begin::Web font -->
@@ -20,7 +19,19 @@
   <link href="./assets/theme/style.bundle.css" rel="stylesheet" type="text/css" />
   <link href="./assets/theme/custom.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+    <!-- begin::Page loader -->
+    <div class="m-page-loader m-page-loader--base m-page-loader--non-block" style="margin-left: -80px; margin-top: -20px;">
+      <div class="m-blockui">
+        <span>
+            Please wait...
+        </span>
+        <span>
+            <div class="m-loader m-loader--brand"></div>
+        </span>
+      </div>
+    </div>
+    <!-- end::Page loader -->
     <div class="m-grid m-grid--hor m-grid--root m-page">
       <app-root></app-root>
     </div>
