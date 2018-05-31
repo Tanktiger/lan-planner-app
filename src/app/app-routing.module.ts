@@ -6,9 +6,6 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {LanComponent} from './lan/lan.component';
 import {GamesComponent} from './games/games.component';
 import {RoyalBeefsComponent} from './royal-beefs/royal-beefs.component';
-import {Test1Component} from './test1/test1.component';
-import {Test2Component} from './test2/test2.component';
-import {Test3Component} from './test3/test3.component';
 
 const routes: Routes = [
     { path: '', component: SetupComponent, pathMatch: 'full' }, // here we can add a landingpage

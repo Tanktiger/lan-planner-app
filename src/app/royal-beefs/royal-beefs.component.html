@@ -1,7 +1,54 @@
-<h3>RoyalBeefs</h3>
-<ul>
-  <li *ngFor="let royalBeef of lan.royalBeefs" (click)="selectedRoyalBeef = royalBeef">
-    {{royalBeef.name}}
-  </li>
-</ul>
-<!--<app-royal-beef (save)="onChange($event)" [royalBeef]="selectedRoyalBeef"></app-royal-beef>-->
+<!-- BEGIN: Subheader -->
+<div class="m-subheader" >
+  <div class="d-flex align-items-center">
+    <div class="mr-auto">
+      <h3 class="m-subheader__title">
+        RoyalBeefs
+      </h3>
+    </div>
+  </div>
+</div>
+<!-- END: Subheader -->
+<div class="m-content">
+  <div class="row">
+    <div class="col-12">
+      <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+        <div class="m-portlet__body">
+          <app-royal-beef (save)="onChange($event)" [royalBeef]="selectedRoyalBeef"></app-royal-beef>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="m-portlet m-portlet--full-height  m-portlet--unair">
+        <div class="m-portlet__body">
+          <div class="m-widget4">
+            <div class="m-widget4__item" [class.m--hide]="lan.royalBeefs && lan.royalBeefs.length > 0">
+              <div class="m-widget4__info">
+                  <span class="m-widget4__title">
+                      Keine Einträge vorhanden
+                  </span>
+              </div>
+            </div>
+
+            <div class="m-widget4__item"
+                 *ngFor="let royalBeef of lan.royalBeefs"
+                 (click)="selectedRoyalBeef = royalBeef">
+              <div class="m-widget4__info">
+                    <span class="m-widget4__title">
+                        {{royalBeef.name}}
+                    </span>
+                <p>Challenges:</p>
+                <app-challenges [royalBeef]="royalBeef"></app-challenges>
+              </div>
+              <div class="m-widget4__ext">
+                <a class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary" href="#" ng-reflect-href="#">
+                  X
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

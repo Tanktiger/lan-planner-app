@@ -5,7 +5,9 @@
 4. --- Erstellen von Royal Beefs ---
 4.1 --- Erstellen von Challenges ---
 4.2 Erstellen von Ergebnissen
-4.3 Design integrieren (Now UI von Creative Tim oder Metronic)
+- componente welche eine Liste von Cards mit allen Gamern und inputs rendert um die Ergebnisse
+zu editieren
+4.3 Design integrieren (Metronic)
 5. Dashboard Anzeige der Ergebnisse
 6. API Erstellen
 7. API integrieren

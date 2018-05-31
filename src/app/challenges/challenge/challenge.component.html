@@ -1,9 +1,30 @@
-<h2>Add/Edit</h2>
-<form #challengeForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="challenge">
-  <label>Name:</label>
-  <input [(ngModel)]="challenge.title" name="title">
-  <label>Description:</label>
-  <input [(ngModel)]="challenge.description" name="description">
-  <button type="submit">Speichern</button>
-  <button type="button" (click)="reset()">X</button>
+<form #challengeForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="challenge" class="m-form m-form--fit m-form--label-align-right">
+  <div class="form-group m-form__group row">
+    <div class="col-4 col-xs-12">
+      <label for="title">
+        Titel
+      </label>
+      <input class="form-control m-input" id="title" [(ngModel)]="challenge.title" name="title">
+    </div>
+    <div class="col-4  col-xs-12">
+      <label for="description">
+        Beschreibung
+      </label>
+      <input class="form-control m-input" id="description" [(ngModel)]="challenge.description" name="description">
+    </div>
+    <div class="col-1 col-xs-12">
+      <label for="rounds">
+        Runden
+      </label>
+      <input class="form-control m-input" type="number" id="rounds" [(ngModel)]="challenge.rounds" name="rounds">
+    </div>
+    <div class="col-3 col-xs-12 m-form__actions">
+      <button class="btn btn-metal" type="submit">
+        Submit
+      </button>
+      <button class="btn btn-secondary" (click)="reset()" type="reset">
+        Cancel
+      </button>
+    </div>
+  </div>
 </form>

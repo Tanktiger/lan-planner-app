@@ -15,13 +15,13 @@ export class RoyalBeefsComponent implements OnInit {
 
   ngOnInit() {
       this.lan = this.lanService.get();
-      if (!this.lan.games) {
+      if (!this.lan.royalBeefs) {
           this.lan.royalBeefs = [];
       }
   }
   onChange(royalBeef: RoyalBeef): void {
     let royalBeefsExists = false;
-    this.lan.games.forEach((existingRoyalBeef, index) => {
+    this.lan.royalBeefs.forEach((existingRoyalBeef, index) => {
         if (existingRoyalBeef.id === royalBeef.id) {
             this.lan.royalBeefs[index] = royalBeef;
             royalBeefsExists = true;

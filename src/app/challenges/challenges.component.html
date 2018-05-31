@@ -1,7 +1,21 @@
-<h3>Games</h3>
-<ul>
-  <li *ngFor="let challenge of royalBeef.challenges" (click)="selectedChallenge = challenge">
-    {{challenge.title}}
-  </li>
-</ul>
+<div class="m-accordion m-accordion--bordered" [id]="'royalbeef_challenges_' + royalBeef.id" role="tablist">
+  <div class="m-accordion__item" *ngFor="let challenge of royalBeef.challenges">
+    <div aria-expanded="false" class="m-accordion__item-head collapsed" data-toggle="collapse" [attr.href]="'#challenge_' + challenge.id + '_body'" [id]="'challenge_' + challenge.id + '_head'" role="tab" [attr.ng-reflect-href]="'#challenge_' + challenge.id + '_body'">
+      <!--<span class="m-accordion__item-icon">-->
+          <!--<i class="fa flaticon-user-ok"></i>-->
+      <!--</span>-->
+      <span class="m-accordion__item-title">
+          {{challenge.title}} (Runden: {{challenge.rounds}})
+      </span>
+      <span class="m-accordion__item-mode"></span>
+    </div>
+    <div class="m-accordion__item-body collapse" [id]="'challenge_' + challenge.id + '_body'" style="">
+      <div class="m-accordion__item-content">
+        <p>
+          {{challenge.description}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 <app-challenge (save)="onChange($event)" [challenge]="selectedChallenge"></app-challenge>

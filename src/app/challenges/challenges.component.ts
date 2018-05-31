@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Lan} from '../models/lan';
 import {Challenge} from '../models/challenge';
 import {LanService} from '../services/lan.service';
@@ -13,7 +13,7 @@ import {ActivatedRoute} from '@angular/router';
 export class ChallengesComponent implements OnInit {
   lan: Lan;
   selectedChallenge: Challenge;
-  royalBeef: RoyalBeef;
+  @Input() royalBeef: RoyalBeef;
   constructor(
       private lanService: LanService,
       private route: ActivatedRoute
