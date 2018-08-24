@@ -18,14 +18,17 @@ export class RoyalBeefComponent implements OnInit {
 
   ngOnInit() {
     if (!this.royalBeef) {
-        this.royalBeef = new RoyalBeef('', [], [], []);
+        this.reset();
     }
   }
 
   onSubmit() {
     console.log(this.royalBeef);
+    const copy = { ...this.royalBeef};
     // @TODO: validate
-    this.save.emit(this.royalBeef);
+    this.save.emit(copy);
+
+    this.reset();
   }
 
   reset() {

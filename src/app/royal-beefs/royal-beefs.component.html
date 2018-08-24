@@ -32,18 +32,19 @@
 
             <div class="m-widget4__item"
                  *ngFor="let royalBeef of lan.royalBeefs"
-                 (click)="selectedRoyalBeef = royalBeef">
+                 >
               <div class="m-widget4__info">
-                    <span class="m-widget4__title">
-                        {{royalBeef.name}}
+                    <span class="m-widget4__title" (click)="selectedRoyalBeef = royalBeef">
+                        {{royalBeef.name}} <i class="fa fa-pencil"></i>
                     </span>
                 <p>Challenges:</p>
                 <app-challenges [royalBeef]="royalBeef"></app-challenges>
               </div>
               <div class="m-widget4__ext">
-                <a class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary" href="#" ng-reflect-href="#">
-                  X
-                </a>
+                <!--<a class="m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;hover-brand btn btn-sm btn-secondary" href="#" ng-reflect-href="#">-->
+                  <!--X-->
+                <!--</a>-->
+                &nbsp;
               </div>
             </div>
           </div>

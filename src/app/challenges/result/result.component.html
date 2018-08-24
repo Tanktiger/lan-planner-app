@@ -1,0 +1,24 @@
+<form #royalBeefForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="result" class="m-form m-form--fit m-form--label-align-right">
+  <div class="form-group m-form__group row">
+    <div class="col-3">
+      <label for="position">&nbsp;</label>
+      <p>{{attendee.name}}</p>
+    </div>
+    <div class="col-2">
+      <label for="position">Position:</label>
+      <input id="position" type="number" [(ngModel)]="result.position" name="position" class="form-control m-input">
+    </div>
+    <div class="col-2">
+      <label for="result">Result:</label>
+      <input id="result" [(ngModel)]="result.result" name="result" class="form-control m-input">
+    </div>
+    <div class="col-4 m-form__actions">
+      <button class="btn btn-metal" type="submit">
+        Save
+      </button>
+      <button class="btn btn-secondary" (click)="reset()" type="reset">
+        Reset
+      </button>
+    </div>
+  </div>
+</form>

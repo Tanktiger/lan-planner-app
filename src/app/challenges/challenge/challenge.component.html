@@ -4,7 +4,7 @@
       <label for="title">
         Titel
       </label>
-      <input class="form-control m-input" id="title" [(ngModel)]="challenge.title" name="title">
+      <input class="form-control m-input" id="title" [(ngModel)]="challenge.title" name="title" required="">
     </div>
     <div class="col-4  col-xs-12">
       <label for="description">
@@ -16,7 +16,7 @@
       <label for="rounds">
         Runden
       </label>
-      <input class="form-control m-input" type="number" id="rounds" [(ngModel)]="challenge.rounds" name="rounds">
+      <input class="form-control m-input" type="number" id="rounds" [(ngModel)]="challenge.rounds" name="rounds" required="">
     </div>
     <div class="col-3 col-xs-12 m-form__actions">
       <button class="btn btn-metal" type="submit">

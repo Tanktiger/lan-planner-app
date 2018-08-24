@@ -1,0 +1,34 @@
+<div class="m-accordion m-accordion--bordered" [id]="'challenge_' + challenge.id + '_results'" role="tablist">
+  <div class="m-accordion__item" *ngFor="let i of rounds">
+    <div aria-expanded="false" class="m-accordion__item-head collapsed"
+         data-toggle="collapse"
+         [attr.href]="'#challenge_' + challenge.id + '_round_' + i + '_body'"
+         [id]="'challenge_' + challenge.id + '_round_' + i + '_head'"
+         role="tab"
+         [attr.ng-reflect-href]="'#challenge_' + challenge.id + '_body'">
+      <!--<span class="m-accordion__item-icon">-->
+      <!--<i class="fa flaticon-user-ok"></i>-->
+      <!--</span>-->
+      <span class="m-accordion__item-title">
+          Results round {{i}}
+      </span>
+      <span class="m-accordion__item-mode"></span>
+    </div>
+    <div class="m-accordion__item-body collapse" [id]="'challenge_' + challenge.id + '_round_' + i + '_body'" style="">
+      <div class="m-accordion__item-content">
+        <div class="row">
+          <app-result
+                  class="col-6 col-xs-12"
+                  *ngFor="let attendee of royalBeef.attendees"
+                  [challenge]="challenge"
+                  [attendee]="attendee"
+                  [result]="getResultByAttendee(attendee)"
+                  [round]="i"
+                  (save)="onChangeResult($event, challenge)">
+
+          </app-result>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

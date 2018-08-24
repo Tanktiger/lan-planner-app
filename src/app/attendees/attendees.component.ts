@@ -37,4 +37,8 @@ export class AttendeesComponent implements OnInit {
     }
     this.lanService.set(this.lan);
   }
+
+  editAttendee(attendee: Attendee): void {
+
+  }
 }

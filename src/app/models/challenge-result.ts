@@ -1,13 +1,13 @@
-import {Challenge} from "./challenge";
-import {Attendee} from "./attendee";
+import {Attendee} from './attendee';
 
 export class ChallengeResult {
+    public id: number;
     constructor(
-        public id: number,
-        public challenge: Challenge,
         public attendee: Attendee,
         public position: number,
         public result: any,
         public round: number,
-    ) {  }
+    ) {
+        this.id = new Date().getTime();
+    }
 }

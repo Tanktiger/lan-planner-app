@@ -20,9 +20,11 @@ export class GameComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.game);
     // @TODO: validate
-    this.save.emit(this.game);
+    const copy = { ...this.game};
+    this.save.emit(copy);
+
+    this.game = new Game('', '');
   }
 
   reset() {

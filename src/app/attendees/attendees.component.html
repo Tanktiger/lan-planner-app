@@ -24,9 +24,9 @@
           <div class="m-widget4">
             <div class="m-widget4__item" [class.m--hide]="lan.attendees && lan.attendees.length > 0">
               <div class="m-widget4__info">
-                                <span class="m-widget4__title">
-                                    Keine Einträge vorhanden
-                                </span>
+                <span class="m-widget4__title">
+                    Keine Einträge vorhanden
+                </span>
               </div>
             </div>
 
@@ -34,12 +34,15 @@
                  *ngFor="let attendee of lan.attendees"
                  (click)="selectedAttendee = attendee">
               <div class="m-widget4__info">
-                                <span class="m-widget4__title">
-                                    {{attendee.name}} ({{attendee.email}})
-                                </span>
+                <span class="m-widget4__title">
+                    {{attendee.name}} ({{attendee.email}}) <i class="fa fa-pencil edit-icon"></i>
+                </span>
               </div>
               <div class="m-widget4__ext">
-                <a class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary" href="#" ng-reflect-href="#">
+                <!--<button class="m-btn m-btn&#45;&#45;pill m-btn&#45;&#45;hover-brand btn btn-sm btn-secondary" (click)="editAttendee(attendee)">-->
+                  <!--<i class="fa fa-pencil"></i>-->
+                <!--</button>-->
+                <a class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary" href="javascript:;" ng-reflect-href="javascript:;">
                   X
                 </a>
               </div>

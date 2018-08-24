@@ -20,6 +20,8 @@ import { ChallengeComponent } from './challenges/challenge/challenge.component';
 import {ScriptLoaderService} from './services/script-loader.service';
 import {LayoutModule} from './theme/layouts/layout.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ResultComponent } from './challenges/result/result.component';
+import { ResultListComponent } from './challenges/result-list/result-list.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AttendeeComponent,
     ChallengesComponent,
     ChallengeComponent,
+    ResultComponent,
+    ResultListComponent,
   ],
   imports: [
     BrowserModule,

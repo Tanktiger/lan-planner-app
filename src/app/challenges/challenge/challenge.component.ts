@@ -20,8 +20,11 @@ export class ChallengeComponent implements OnInit {
 
   onSubmit() {
     console.log(this.challenge);
+    const copy = { ...this.challenge};
     // @TODO: validate
-    this.save.emit(this.challenge);
+    this.save.emit(copy);
+
+    this.reset();
   }
 
   reset() {

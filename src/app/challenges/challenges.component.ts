@@ -4,6 +4,7 @@ import {Challenge} from '../models/challenge';
 import {LanService} from '../services/lan.service';
 import {RoyalBeef} from '../models/royal-beef';
 import {ActivatedRoute} from '@angular/router';
+import {ChallengeResult} from "../models/challenge-result";
 
 @Component({
   selector: 'app-challenges',
@@ -36,6 +37,7 @@ export class ChallengesComponent implements OnInit {
     if (!challengeExists) {
         this.royalBeef.challenges.push(Object.assign({}, challenge));
     }
+    console.log(this.royalBeef);
     this.lanService.setRoyalBeef(this.royalBeef);
   }
 }
