@@ -16,8 +16,8 @@ export class DashboardComponent implements OnInit {
 
   lan: Lan;
   rankings: Array<any>;
+  beefCount: number;
   challengesCount: number;
-  objectKeys = Object.keys;
   constructor(
       private storage: LocalStorageService
   ) { }
@@ -25,35 +25,41 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.lan = this.storage.get('lan');
     this.challengesCount = 0;
+    this.beefCount = 0;
     this.calculatePlacement();
   }
 
   calculatePlacement() {
     this.rankings = new Array(0);
     this.lan.royalBeefs.forEach((royalBeef: RoyalBeef, rIndex: number) => {
+      this.beefCount++;
       royalBeef.challenges.forEach((challenge: Challenge, cIndex: number) => {
+        this.challengesCount++;
         challenge.results.forEach((result: ChallengeResult, crIndex: number) => {
-          this.challengesCount++;
-          if (!(result.attendee.id in Object.keys(this.rankings))) {
-              this.rankings[result.attendee.id] = 0;
+          let index = _.findIndex(this.rankings, ['id', result.attendee.id]);
+          if (index === -1) {
+            // init object
+            this.rankings.push({
+              name: result.attendee.name,
+              position: 0,
+              id: result.attendee.id,
+              resultCount: 0
+            });
+
+            index = _.findIndex(this.rankings, ['id', result.attendee.id]);
           }
-          this.rankings[result.attendee.id] += +result.position; // + operator makes a string to an number
+          this.rankings[index].position += +result.position;
+          this.rankings[index].resultCount++;
         });
       });
     });
 
-    // @TODO: geht noch nicht!
-    this.rankings.map((ranking, attendeeId) => {
-      console.log(ranking);
-      return ranking / this.challengesCount;
-    }).sort((a, b) => {
-      console.log(a, b);
-      if (a < b) { return -1; }
-      if (a > b) { return 1; }
 
-      return 0;
+    this.rankings.map((ranking) => {
+      ranking.position = _.round(ranking.position / ranking.resultCount);
+      return ranking;
     });
-
+    this.rankings = _.orderBy(this.rankings, ['position']);
     console.log(this.rankings);
   }
 }

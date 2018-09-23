@@ -32,4 +32,9 @@ export class RoyalBeefsComponent implements OnInit {
     }
     this.lanService.set(this.lan);
   }
+  removeRoyalBeef(royalBeef: RoyalBeef): void {
+      if (confirm('Do you really want to delete this royal beef?')) {
+          this.lan.royalBeefs.splice(this.lan.royalBeefs.indexOf(royalBeef), 1);
+      }
+  }
 }

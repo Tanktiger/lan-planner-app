@@ -37,7 +37,12 @@ export class ChallengesComponent implements OnInit {
     if (!challengeExists) {
         this.royalBeef.challenges.push(Object.assign({}, challenge));
     }
-    console.log(this.royalBeef);
     this.lanService.setRoyalBeef(this.royalBeef);
+  }
+  removeChallenge(challenge: Challenge): void {
+      if (confirm('Do you really want to delete this challenge?')) {
+          this.royalBeef.challenges.splice(this.royalBeef.challenges.indexOf(challenge), 1);
+          this.lanService.setRoyalBeef(this.royalBeef);
+      }
   }
 }

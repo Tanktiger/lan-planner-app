@@ -34,8 +34,8 @@
                  *ngFor="let royalBeef of lan.royalBeefs"
                  >
               <div class="m-widget4__info">
-                    <span class="m-widget4__title" (click)="selectedRoyalBeef = royalBeef">
-                        {{royalBeef.name}} <i class="fa fa-pencil"></i>
+                    <span class="m-widget4__title">
+                      <h3>{{royalBeef.name}} <i class="fa m--font-danger fa-remove" (click)="removeRoyalBeef(royalBeef)"></i></h3>
                     </span>
                 <p>Challenges:</p>
                 <app-challenges [royalBeef]="royalBeef"></app-challenges>
