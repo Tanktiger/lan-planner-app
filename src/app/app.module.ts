@@ -22,6 +22,9 @@ import {LayoutModule} from './theme/layouts/layout.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ResultComponent } from './challenges/result/result.component';
 import { ResultListComponent } from './challenges/result-list/result-list.component';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -47,6 +50,8 @@ import { ResultListComponent } from './challenges/result-list/result-list.compon
     AppRoutingModule,
     LayoutModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [LocalStorageService, LanService, ScriptLoaderService],
   bootstrap: [AppComponent]

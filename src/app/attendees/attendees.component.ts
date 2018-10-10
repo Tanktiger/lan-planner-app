@@ -12,7 +12,7 @@ import { LanService } from '../services/lan.service';
 export class AttendeesComponent implements OnInit {
 
   selectedAttendee: Attendee;
-  lan: Lan;
+  lan: any;
   constructor(
       private lanService: LanService
   ) { }

@@ -9,7 +9,7 @@ import {RoyalBeef} from '../models/royal-beef';
   styleUrls: ['./royal-beefs.component.css']
 })
 export class RoyalBeefsComponent implements OnInit {
-  lan: Lan;
+  lan: any;
   selectedRoyalBeef: RoyalBeef;
   constructor(private lanService: LanService) { }
 

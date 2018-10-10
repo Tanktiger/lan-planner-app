@@ -20,7 +20,6 @@ export class AttendeeComponent implements OnInit {
     }
 
     onSubmit() {
-      console.log(this.attendee);
       const copy = { ...this.attendee}; // { ...object} = copy shorthand es6
       // @TODO: validate
       this.save.emit(copy);

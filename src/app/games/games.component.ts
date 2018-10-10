@@ -10,7 +10,7 @@ import { Lan } from '../models/lan';
   encapsulation: ViewEncapsulation.None,
 })
 export class GamesComponent implements OnInit {
-  lan: Lan;
+  lan: any;
   selectedGame: Game;
   constructor(private lanService: LanService) {
     this.lan = this.lanService.get();

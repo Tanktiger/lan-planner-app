@@ -12,7 +12,7 @@ import {ChallengeResult} from "../models/challenge-result";
   styleUrls: ['./challenges.component.css']
 })
 export class ChallengesComponent implements OnInit {
-  lan: Lan;
+  lan: any;
   selectedChallenge: Challenge;
   @Input() royalBeef: RoyalBeef;
   constructor(

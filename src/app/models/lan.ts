@@ -3,9 +3,9 @@ import {Game} from './game';
 import {RoyalBeef} from './royal-beef';
 
 export class Lan {
-    public id: number;
+    public id: string;
     public name: string;
-    public reference: string;
+    // public reference: string;
     public start: string;
     public end: string;
     public city: string;
@@ -17,7 +17,7 @@ export class Lan {
 
     constructor(
         name?: string,
-        reference?: string,
+        // reference?: string,
         start?: string,
         end?: string,
         city?: string,
@@ -36,7 +36,7 @@ export class Lan {
         this.games = games || [];
         this.royalBeefs = royalBeefs || [];
         this.attendees = attendees || [];
-        this.id = new Date().getTime();
-        this.reference =  reference ? reference : '' + (this.id + this.id);
+        // this.id = new Date().getTime();
+        // this.reference = reference;
     }
 }

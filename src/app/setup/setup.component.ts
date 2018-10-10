@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Lan } from '../models/lan';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LocalStorageService } from '../services/local-storage.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import {LanService} from "../services/lan.service";
 
 @Component({
   selector: 'app-setup',
@@ -15,18 +18,18 @@ export class SetupComponent implements OnInit {
   constructor(
       private route: ActivatedRoute,
       private router: Router,
-      private storage: LocalStorageService
+      private lanService: LanService,
+      private storage: LocalStorageService,
   ) { }
 
   ngOnInit() {
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.submitted = true;
-    // @TODO: save to api
-    console.log(this.lan);
     this.storage.set('lan', this.lan);
-    this.router.navigate([`/lan/${this.lan.reference}/dashboard`]);
+    await this.lanService.create(this.lan);
+    this.router.navigate([`/lan/${this.lanService.getCurrentLanId()}/dashboard`]);
   }
 
 }

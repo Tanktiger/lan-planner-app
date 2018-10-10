@@ -11,7 +11,7 @@ import {LanService} from '../../services/lan.service';
 export class RoyalBeefComponent implements OnInit {
   @Input() royalBeef: RoyalBeef;
   @Output() save: EventEmitter<any> = new EventEmitter();
-  lan: Lan;
+  lan: any;
   constructor(private lanService: LanService) {
       this.lan = this.lanService.get();
   }
